@@ -1,8 +1,10 @@
-var http = require('http');
+var express = require('express');
 
-http.createServer(function (req, res) {
-    
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('Hello, world666!');
-    
-}).listen(process.env.PORT || 8080);
+var app = express();
+
+app.get('/', function(req, res) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Vous êtes à l\'accueil');
+});
+
+app.listen(8080);
